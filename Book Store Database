@@ -1,0 +1,32 @@
+~~ Create a book store database.
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "Frankenstein", "Horror", 11.99, 80);
+INSERT INTO store VALUES (2, "Hobbit", "Fanstay", 12.99, 82);
+INSERT INTO store VALUES (3, "Harry Potter", "Children's Fiction", 15.50, 95);
+INSERT INTO store VALUES (4, "Dune", "Science Fiction", 18.50, 70);
+INSERT INTO store VALUES (5, "A Promised Land", "Non-Fiction", 19.99, 74);
+INSERT INTO store VALUES (6, "A Tale of Two Cities", "Classics", 10.75, 55);
+INSERT INTO store VALUEs (7, "And Then There Were None", "Mystery", 8.99, 68);
+INSERT INTO store VALUES (8, "Pet Sematary", "Horror", 15.99, 58);
+INSERT INTO store VALUES (9, "The Midnight Library", "Mystery", 19.50, 45);
+INSERT INTO store VALUES (10, "The Magic Treehouse", "Children's Fiction", 7.99, 38);
+INSERT INTO store VALUES (11, "A Series of Unfortunate Events", "Children's Fiction", 12.99, 72);
+INSERT INTO store VALUES (12, "Where The Water Goes", "Non-fiction", 21.99, 35);
+INSERT INTO store VALUES (13, "Wuthering Heights", "Classics", 7.00, 78);
+INSERT INTO store VALUES (14, "Ender's Game", "Science Fiction", 22.50, 47);
+INSERT INTO store VALUES (15, "The Way of Kings", "Fanstay", 20.00, 69);
+
+~~ Display the database ordered by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+~~ What is the average price of items in the horror section?
+SELECT AVG(price) 
+FROM store 
+WHERE section='Horror';
+
+~~ What are the 5 most popular items? 
+SELECT item, price, popularity
+FROM store 
+ORDER BY popularity desc limit 5; 
